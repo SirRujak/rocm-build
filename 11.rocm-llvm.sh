@@ -26,8 +26,8 @@ cmake \
     -DCPACK_DEBIAN_FILE_NAME=DEB-DEFAULT \
     -G Ninja \
     $ROCM_GIT_DIR/llvm-project/llvm
-ninja -j6
-ninja package
+ninja -j 6
+ninja package -j 6
 dpkg -i *.deb
 
 END_TIME=`date +%s`
