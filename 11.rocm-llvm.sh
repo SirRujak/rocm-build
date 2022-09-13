@@ -26,13 +26,12 @@ cmake \
     -DCPACK_DEBIAN_FILE_NAME=DEB-DEFAULT \
     -G Ninja \
     $ROCM_GIT_DIR/llvm-project/llvm
-ninja
+ninja -j6
 ninja package
-sudo dpkg -i *.deb
+dpkg -i *.deb
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
 echo "elapse : "$EXECUTING_TIME"s"
 
 popd
-

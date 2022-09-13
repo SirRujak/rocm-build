@@ -25,7 +25,7 @@ CXX=$ROCM_INSTALL_DIR/bin/hipcc cmake \
     $ROCM_GIT_DIR/rocSPARSE
 ninja
 ninja package
-sudo dpkg -i *.deb
+dpkg -i *.deb
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`

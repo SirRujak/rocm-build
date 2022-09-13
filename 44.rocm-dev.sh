@@ -17,7 +17,7 @@ cmake \
   -DROCM_BUILD_VERSION=${CPACK_DEBIAN_PACKAGE_RELEASE} \
   $ROCM_BUILD_DIR/../src/rocm-dev
 make package
-sudo dpkg -i *.deb
+dpkg -i *.deb
 
 END_TIME=`date +%s`
 EXECUTING_TIME=`expr $END_TIME - $START_TIME`
